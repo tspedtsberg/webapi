@@ -1,0 +1,14 @@
+version: '3'
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'Str0ngPa$$w0rd'
+    volumes:
+      - sqlserverdataFooddeliveryapp:/var/lib/mysql
+    ports:
+      - 1433:1433
+volumes:
+ sqlserverdataFooddeliveryapp:
+  external: true
